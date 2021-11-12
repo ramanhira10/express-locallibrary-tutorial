@@ -9,8 +9,7 @@ var catalogRouter = require('./routes/catalog');
 
 var app = express();
 
-
-var mongoDB = 'mongodb+srv://dbUser:dbUserPassword@cluster0.zhkee.mongodb.net/local_library?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGODB_URI || '';
 
 mongoose.connect(mongoDB, {
     useNewUrlParser: true,
